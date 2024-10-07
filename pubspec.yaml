@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # flutter_background_grid: ^2.0.0 # Check for the latest version on pub.dev
 
 
   # The following adds the Cupertino Icons font to your application.
