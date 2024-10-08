@@ -43,7 +43,6 @@ class _LoginPageState extends State<LoginPage> {
             Text(
               "Welcome to SuperChat",
               style: TextStyle(
-                fontFamily: 'Roboto-Regular.ttf',
                 fontSize: 16,
                 color: Theme.of(context).colorScheme.secondary,
               )

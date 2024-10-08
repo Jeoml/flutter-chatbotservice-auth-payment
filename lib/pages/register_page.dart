@@ -18,95 +18,97 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       backgroundColor: Colors.grey[200],
+      resizeToAvoidBottomInset: true, // This allows the UI to adjust when the keyboard appears
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            //logo
-            Image.asset(
-              'assets/gifs/bot.gif',
-              width: 190,
-              height: 190,
-            ),
-            // Icon(
-            //   Icons.lock_open_rounded,
-            //   size: 90,
-            //   color: Theme.of(context).colorScheme.secondary,
-            // ),
-
-            const SizedBox(height: 25),
-
-            //Message
-            Text(
-              "Let's create an account for you",
-              style: TextStyle(
-                fontSize: 16,
-                color: Theme.of(context).colorScheme.secondary,
-              )
-            ),
-
-            const SizedBox(height: 25),
-
-            //text field for email
-            MyTextfield(
-              controller: emailController,
-              hintText: 'Email',
-              obscureText: false,
-            ),
-
-            const SizedBox(height: 10),
-
-            //text field for password
-            MyTextfield(
-              controller: passwordController,
-              hintText: 'Password',
-              obscureText: true,
-            ),
-
-            const SizedBox(height: 15),
-
-            MyTextfield(
-              controller: confirmpasswordController,
-              hintText: 'Confirm Password',
-              obscureText: true,
-            ),
-
-            const SizedBox(height: 15),
-
-            //button
-            MyButton(text: 'Sign Up', onTap: (){}),
-
-            const SizedBox(height: 10),
-
-            // Already have an account? Login here
-            Row(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 0.0),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const SizedBox(height: 40), // Add some space at the top for safety
+
+                //logo
+                Image.asset(
+                  'assets/gifs/bot.gif',
+                  width: 190,
+                  height: 190,
+                ),
+
+                const SizedBox(height: 25),
+
+                //Message
                 Text(
-                  "already have an account?",
+                  "Let's create an account for you",
                   style: TextStyle(
-                    color: Colors.grey.shade600,
+                    fontSize: 16,
+                    color: Theme.of(context).colorScheme.secondary,
                   ),
                 ),
 
-                const SizedBox(width: 4),
+                const SizedBox(height: 25),
 
-                GestureDetector(
-                  onTap: widget.onTap,
-                  child: Text(
-                    "Login Now",
-                    style: TextStyle(
-                      color: Colors.grey.shade600,
-                      fontWeight: FontWeight.bold,
+                //text field for email
+                MyTextfield(
+                  controller: emailController,
+                  hintText: 'Email',
+                  obscureText: false,
+                ),
+
+                const SizedBox(height: 10),
+
+                //text field for password
+                MyTextfield(
+                  controller: passwordController,
+                  hintText: 'Password',
+                  obscureText: true,
+                ),
+
+                const SizedBox(height: 15),
+
+                MyTextfield(
+                  controller: confirmpasswordController,
+                  hintText: 'Confirm Password',
+                  obscureText: true,
+                ),
+
+                const SizedBox(height: 15),
+
+                //button
+                MyButton(text: 'Sign Up', onTap: () {}),
+
+                const SizedBox(height: 10),
+
+                // Already have an account? Login here
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "already have an account?",
+                      style: TextStyle(
+                        color: Colors.grey.shade600,
+                      ),
                     ),
-                  ),
-                )
+                    const SizedBox(width: 4),
+                    GestureDetector(
+                      onTap: widget.onTap,
+                      child: Text(
+                        "Login Now",
+                        style: TextStyle(
+                          color: Colors.grey.shade600,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 40), // Add some space at the bottom for safety
               ],
-            )
-          ],
+            ),
+          ),
         ),
       ),
     );
