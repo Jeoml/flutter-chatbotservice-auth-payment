@@ -26,11 +26,16 @@ class _RegisterPageState extends State<RegisterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             //logo
-            Icon(
-              Icons.lock_open_rounded,
-              size: 90,
-              color: Theme.of(context).colorScheme.secondary,
+            Image.asset(
+              'assets/gifs/bot.gif',
+              width: 190,
+              height: 190,
             ),
+            // Icon(
+            //   Icons.lock_open_rounded,
+            //   size: 90,
+            //   color: Theme.of(context).colorScheme.secondary,
+            // ),
 
             const SizedBox(height: 25),
 

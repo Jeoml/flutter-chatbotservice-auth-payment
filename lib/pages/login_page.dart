@@ -25,19 +25,25 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //logo
-            Icon(
-              Icons.lock_open_rounded,
-              size: 90,
-              color: Theme.of(context).colorScheme.secondary,
+            // logo
+            Image.asset(
+              'assets/gifs/bot.gif',
+              width: 190,
+              height: 190,
             ),
+            // Icon(
+            //   Icons.lock_open_rounded,
+            //   size: 90,
+            //   color: Theme.of(context).colorScheme.secondary,
+            // ),
 
             const SizedBox(height: 25),
 
             //Message
             Text(
-              "SuperChat",
+              "Welcome to SuperChat",
               style: TextStyle(
+                fontFamily: 'Roboto-Regular.ttf',
                 fontSize: 16,
                 color: Theme.of(context).colorScheme.secondary,
               )
@@ -57,6 +63,7 @@ class _LoginPageState extends State<LoginPage> {
             //text field for password
             MyTextfield(
               controller: passwordController,
+
               hintText: 'Enter your Password',
               obscureText: true,
             ),
