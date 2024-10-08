@@ -19,7 +19,7 @@ Follow these steps to set up and run the project:
 Clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/Jeoml/flutter-login-page.git
+git clone https://github.com/Jeoml/flutterchatbot.git
 cd flutter-login-page
 flutter pub get
 flutter run
