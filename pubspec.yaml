@@ -41,6 +41,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^2.2.18
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -51,6 +52,13 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+flutter_native_splash:
+  color: "#ffffff" # Background color of the splash screen (can be any hex color).
+  image: assets/images/superchatlogo.png # Path to your custom logo (must be added to assets).
+  android: false # Enable for Android.
+  ios: false # Enable for iOS.
+  web: false # You can also configure it for web (optional).
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -63,6 +71,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/gifs/bot.gif
+    - assets/images/superchatlogo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

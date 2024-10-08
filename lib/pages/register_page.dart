@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterchatbot/components/my_button.dart';
 import 'package:flutterchatbot/components/my_textfield.dart';
+import 'package:flutterchatbot/pages/home_page.dart';
 
 class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
@@ -14,21 +15,39 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmpasswordController = TextEditingController();
+  final TextEditingController confirmpasswordController =
+      TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
+  void register() {
+    if (_formKey.currentState!.validate()) {
+      // Your login logic here
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomePage(),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      resizeToAvoidBottomInset: true, // This allows the UI to adjust when the keyboard appears
+      resizeToAvoidBottomInset:
+          true, // This allows the UI to adjust when the keyboard appears
       body: Center(
         child: SingleChildScrollView(
+          child: Form(
+              key: _formKey,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 0.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 40), // Add some space at the top for safety
+                const SizedBox(
+                    height: 40), // Add some space at the top for safety
 
                 //logo
                 Image.asset(
@@ -55,6 +74,12 @@ class _RegisterPageState extends State<RegisterPage> {
                   controller: emailController,
                   hintText: 'Email',
                   obscureText: false,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email';
+                    }
+                    return null;
+                  },
                 ),
 
                 const SizedBox(height: 10),
@@ -64,6 +89,12 @@ class _RegisterPageState extends State<RegisterPage> {
                   controller: passwordController,
                   hintText: 'Password',
                   obscureText: true,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password';
+                    }
+                    return null;
+                  },
                 ),
 
                 const SizedBox(height: 15),
@@ -72,12 +103,21 @@ class _RegisterPageState extends State<RegisterPage> {
                   controller: confirmpasswordController,
                   hintText: 'Confirm Password',
                   obscureText: true,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please confirm your password';
+                    }
+                    if (value != passwordController.text) {
+                      return 'Passwords do not match';
+                    }
+                    return null;
+                  },
                 ),
 
                 const SizedBox(height: 15),
 
                 //button
-                MyButton(text: 'Sign Up', onTap: () {}),
+                MyButton(text: 'Sign Up', onTap: register),
 
                 const SizedBox(height: 10),
 
@@ -105,11 +145,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   ],
                 ),
 
-                const SizedBox(height: 40), // Add some space at the bottom for safety
+                const SizedBox(
+                    height: 40), // Add some space at the bottom for safety
               ],
             ),
           ),
         ),
+      ),
       ),
     );
   }
