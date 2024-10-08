@@ -1,6 +1,6 @@
-# Flutter Login Page
+# Flutter Chatbot
 
-This project is a simple Flutter application that includes a login page with email and password fields, and a sign-in button.
+This project is a simple Flutter application that includes a login page with email and password fields, and a sign-in button, which will further be developed into a chat application.
 
 ## Prerequisites
 
