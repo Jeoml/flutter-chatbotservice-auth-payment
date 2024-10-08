@@ -3,11 +3,13 @@ import '../painters/dotted_painter.dart'; // Adjust the path accordingly
 
 
 class DottedBackground extends StatelessWidget {
+  const DottedBackground({super.key});
+
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
       painter: DottedPainter(),
-      child: Center(
+      child: const Center(
       ),
     );
   }
