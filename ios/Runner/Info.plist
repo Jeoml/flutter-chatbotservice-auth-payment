@@ -47,5 +47,11 @@
 		<true/>
 		<key>UIStatusBarHidden</key>
 		<false/>
+	<array>
+		<string>tez</string>
+		<string>paytm</string>
+		<string>phonepe</string>
+	1</array>
+	<!-- added by Joel -->
 	</dict>
 </plist>

@@ -20,13 +20,13 @@ class _LoginPageState extends State<LoginPage> {
   //valid logon
   void login() {
     if (_formKey.currentState!.validate()) {
-      // Your login logic here
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const HomePage(),
+          builder: (context) => HomePage(email: emailController.text),
         ),
       );
+      
     }
   }
 

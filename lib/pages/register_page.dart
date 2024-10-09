@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterchatbot/components/my_button.dart';
 import 'package:flutterchatbot/components/my_textfield.dart';
 import 'package:flutterchatbot/pages/home_page.dart';
+import 'package:flutterchatbot/pages/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
@@ -25,7 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const HomePage(),
+          builder: (context) => const LoginPage(onTap: null),
         ),
       );
     }
@@ -36,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       resizeToAvoidBottomInset:
-          true, // This allows the UI to adjust when the keyboard appears
+          true,
       body: Center(
         child: SingleChildScrollView(
           child: Form(
@@ -47,7 +48,7 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                    height: 40), // Add some space at the top for safety
+                    height: 40),
 
                 //logo
                 Image.asset(
@@ -146,7 +147,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
 
                 const SizedBox(
-                    height: 40), // Add some space at the bottom for safety
+                    height: 40),
               ],
             ),
           ),

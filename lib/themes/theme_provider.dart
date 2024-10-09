@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutterchatbot/themes/dark_mode.dart';
-import 'package:flutterchatbot/themes/light_mode.dart';
 
-class ThemeProvider with ChangeNotifier{
-  ThemeData _themeData = lightMode;
-  ThemeData get themeData => _themeData;
-  bool get isDarkMode => _themeData == darkMode;
-  set themeData(ThemeData themeData){
-    _themeData = themeData;
-    notifyListeners();  
+class ThemeProvider extends ChangeNotifier {
+  bool _isDarkMode = false;
+
+  bool get isDarkMode => _isDarkMode;
+
+  void toggleTheme() {
+    _isDarkMode = !_isDarkMode;
+    notifyListeners();
   }
-  void toggleTheme(){
-    if(_themeData == lightMode){
-      _themeData = darkMode;
-    }
-    else{
-      _themeData = lightMode;
-    }
-  }
+
+  ThemeMode get themeMode => _isDarkMode ? ThemeMode.dark : ThemeMode.light;
 }
