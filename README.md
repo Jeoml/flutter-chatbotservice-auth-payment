@@ -25,7 +25,6 @@ flutter pub get
 flutter run
 ```
 ## Project Snapshots
-<img src="https://github.com/user-attachments/assets/e811b274-6689-416d-bd4d-749dfb2c0cf0" alt="Screenshot_1728379786" width="300"/>
-<img src="https://github.com/user-attachments/assets/bd04eddf-e702-4667-8646-fc602517c626" alt="Screenshot_1728379783" width="300"/>
-
-
+<img src="https://github.com/user-attachments/assets/ed4d58a9-fb59-47cf-bf6a-3b64e5fb55b4" alt="Image 1" width="300"/>
+<img src="https://github.com/user-attachments/assets/e181a55a-972a-4296-8394-b9e3a4e23154" alt="Screenshot 2024-10-09 161958" width="300"/>
+<img src="https://github.com/user-attachments/assets/1577d11a-8eea-431d-82ca-9082d1f63323" alt="Screenshot 2024-10-09 162020" width="300"/>
