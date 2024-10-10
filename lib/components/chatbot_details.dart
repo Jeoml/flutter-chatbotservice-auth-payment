@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterchatbot/pages/chat_ui.dart';
 
+// ChatbotDetails Page
 class ChatbotDetails extends StatelessWidget {
   const ChatbotDetails({super.key});
 
@@ -22,11 +24,26 @@ class ChatbotDetails extends StatelessWidget {
           ),
           Row(
             children: [
-              Text("Chatbot ID: CDI781522F",style: TextStyle(
-                color: Theme.of(context).colorScheme.inversePrimary,
-                fontWeight: FontWeight.bold,),
+              Text(
+                "Chatbot ID: CDI781522F",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              Icon(Icons.keyboard_arrow_right_rounded),
+              // Wrap the Icon with GestureDetector to handle clicks
+              GestureDetector(
+                onTap: () {
+                  // Navigate to Chat UI Page on click
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ChatScreen()),
+                  );
+                },
+                child: Icon(
+                    Icons.keyboard_arrow_right_rounded
+                ),
+              ),
             ],
           ),
         ],

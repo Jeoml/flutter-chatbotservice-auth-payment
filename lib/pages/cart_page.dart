@@ -63,7 +63,7 @@ class _CartPageState extends State<CartPage> {
         'Basic ${base64Encode(utf8.encode('$username:$password'))}';
 
     Map<String, dynamic> body = {
-      "amount": 10000, // Amount in paise (100 INR)
+      "amount": 41988, // Amount in paise (100 INR)
       "currency": "INR",
       "receipt": "rcptid_11"
     };
