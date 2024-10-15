@@ -57,8 +57,8 @@ class _CartPageState extends State<CartPage> {
   }
 
   void createOrder() async {
-    String username = 'rzp_test_rhCVCAC0wf7m91';
-    String password = '5r0i7bO1iVDAc8gtj1JIcQ8Q';
+    String username = '';
+    String password = '';
     String basicAuth =
         'Basic ${base64Encode(utf8.encode('$username:$password'))}';
 
